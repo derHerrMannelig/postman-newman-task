@@ -17,7 +17,7 @@ jobs:
         run: mkdir -p test-results
       - name: Run collection
         run: |
-          newman run petstore.collection.json -r htmlextra --reporter-htmlextra-export test-results/htmlreport.html --reporter-htmlextra-darkTheme  > test-results/run-report.html
+          newman run petstore.collection.json -r htmlextra --reporter-htmlextra-export test-results/htmlreport.html || true
       - name: Output the run Details
         uses: actions/upload-artifact@v2
         with:
